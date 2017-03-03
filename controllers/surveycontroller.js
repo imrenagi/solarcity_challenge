@@ -39,3 +39,11 @@ exports.addSurvey = function(req, res, next) {
 		});
 	}
 }
+
+exports.getResult = function(req, res, next) {
+	surveyService.fetchResult().then(function(result) {
+		res.send(result);
+	}).catch(function(err) {
+		next(err);
+	});
+}
