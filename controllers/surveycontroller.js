@@ -16,11 +16,12 @@ exports.addSurvey = function(req, res, next) {
 
 	if (name === undefined || age === undefined || sex === undefined
 		|| address === undefined || reason === undefined) {
+		
 		var err = new Error();
 	  	err.status = 400;
 	  	err.message = "Invalid request!";
 	  	next(err);
-	  	
+
 	} else {
 		var data = {
 			name : name,

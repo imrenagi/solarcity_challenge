@@ -21,38 +21,46 @@
 
 <body ng-controller="formController">
 	<div class="container">
+		<header>
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+			    <h1>Solar Online Sales Survey</h1>
+			    <h3>Make better future with solar technology</h3>
+			    <p>Please help us answering some questions about your interest in Solar Panel. This information will help us in making better investment in future to solar technology.</p>
+		    </div>
+  		</header>
+
 		<div id="survey-form" class="row">
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
 					<div class="form-group">
-						<label for="name">Name:</label>
+						<label for="name">Name*:</label>
 						<input type="text" id="name" class="form-control input" placeholder="Name" ng-model="formData.name">
 					</div>
 
 					<div class="form-group">
-						<label for="address">Address:</label>
+						<label for="address">Address*:</label>
 						<input type="text" id="address" class="form-control input" placeholder="Address" ng-model="formData.address">
 					</div>
 
 					<div class="form-group">
-						<label for="age">Age:</label>
+						<label for="age">Age*:</label>
 						<input type="text" id="age" class="form-control input" placeholder="Age" ng-model="formData.age"> 
 					</div>
 
 					<div class="form-group">
-						<label for="sex">Sex:</label>
+						<label for="sex">Sex*:</label>
 						<label class="radio-inline"><input type="radio" name="sexradio" ng-model="formData.sex" value="1">Male</label>
 						<label class="radio-inline"><input type="radio" name="sexradio" ng-model="formData.sex" value="2">Female</label>
 					</div>
 
 					<div class="form-group">
-						<label for="isInterested">Interested in solar panel?</label>
+						<label for="isInterested">Interested in solar panel?*</label>
 						<label class="radio-inline"><input type="radio" name="interestradio" ng-model="formData.is_interested" value="1">Yes</label>
 						<label class="radio-inline"><input type="radio" name="interestradio" ng-model="formData.is_interested" value="0">No</label>
 					</div>
 
 					<div class="form-group">
-						<label for="reason">Reason:</label>
+						<label for="reason">Reason*:</label>
 						<input type="textarea" id="reason" class="form-control input" placeholder="Please let us know the reason" ng-model="formData.reason"> 
 					</div>
 
