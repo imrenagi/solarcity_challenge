@@ -16,7 +16,6 @@ angular.module('surveyController', ['ui.bootstrap'])
 					.success(function(data) {
 						$scope.loading = false;
 						$scope.formData = {};
-                        $scope.showModal = true;
 					}).error(function(data, code) {
 					    console.log(data);
 					    console.log(code);
@@ -26,7 +25,7 @@ angular.module('surveyController', ['ui.bootstrap'])
 
         $scope.openErrorDialog = function (errMessage) {
             $modal.open({
-                templateUrl: 'templates/popup.html',
+                templateUrl: 'templates/errorpopup.html',
                 controller: 'ErrorPopupCont',
                 resolve: {
                     msg: function () {
