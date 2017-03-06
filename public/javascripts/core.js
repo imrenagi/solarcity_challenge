@@ -1,1 +1,1 @@
-angular.module('survey', ['surveyController', 'surveyService']);
+angular.module('survey', ['surveyController', 'surveyService', 'utilService']);

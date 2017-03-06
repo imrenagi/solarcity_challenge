@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "./scripts/preinstall.sh",
     "postinstall": "./scripts/postinstall.sh",
-    "start": "node ./bin/www",
+    "start": "forever -w bin/www",
     "test": "grunt test",
     "prestart": "db-migrate up"
   },
