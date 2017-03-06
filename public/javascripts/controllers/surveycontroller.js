@@ -1,6 +1,6 @@
 angular.module('surveyController', ['ui.bootstrap'])
 
-	.controller('formController', ['$scope','$http','Survey', 'Util', function($scope, $http, Survey, Util) {
+	.controller('formController', ['$scope','$http', '$modal','Survey', 'Util', function($scope, $http, $modal, Survey, Util) {
 		$scope.formData = {};
 		$scope.ages = [];
 		$scope.loading = true;
@@ -16,10 +16,29 @@ angular.module('surveyController', ['ui.bootstrap'])
 					.success(function(data) {
 						$scope.loading = false;
 						$scope.formData = {};
+                        $scope.showModal = true;
 					}).error(function(data, code) {
 					    console.log(data);
 					    console.log(code);
+					    $scope.openErrorDialog(data.message);
                 });
 		}
-	}]);
+
+        $scope.openErrorDialog = function (errMessage) {
+            $modal.open({
+                templateUrl: 'templates/popup.html',
+                controller: 'ErrorPopupCont',
+                resolve: {
+                    msg: function () {
+                        return errMessage;
+                    }
+                }
+            });
+        }
+	}])
+    .controller('ErrorPopupCont',function ($scope, $modalInstance, msg) {
+        $scope.content = msg;
+        $scope.close = function () {
+            $modalInstance.dismiss('cancel');
+        }});
 	

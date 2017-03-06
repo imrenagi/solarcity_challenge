@@ -25,7 +25,7 @@ exports.addSurvey = function(req, res, next) {
 	  	if (invalidFields.length == 1) {
             err.message = "You didn't fill " + invalidFields[0] + " field. Please complete the form!";
 		} else {
-	  		err.message = "You didn't fill these following field: " + invalidFields.join(", ") + ". Please complete the form!";
+	  		err.message = "You didn't fill these following fields: " + invalidFields.join(", ") + ". Please complete the form!";
 		}
 	  	res.status(err.status).send(err);
 	} else {
