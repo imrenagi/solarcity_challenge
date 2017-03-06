@@ -1,37 +1,34 @@
 
 var SurveyService = require('../services/surveyservice');
-var SurveyDAO = require('../services/surveydao');
+var SurveyDAO = require('../models/surveydao');
 var database = require('../services/database');
+
+var verificationHandler = require('../utils/verificationhandler');
 
 var surveyDAO = new SurveyDAO(database);
 var surveyService = new SurveyService(surveyDAO);
 
 exports.addSurvey = function(req, res, next) {
-	var name = req.body.name;
-	var age = req.body.age;
-	var sex = req.body.sex;
-	var address = req.body.address;
-	var isInterested = req.body.is_interested;
-	var reason = req.body.reason;
+    var data = {
+        name : req.body.name,
+        age : req.body.age,
+        sex : req.body.sex,
+        address : req.body.address,
+        isInterested : req.body.is_interested,
+        reason : req.body.reason
+    };
 
-	if (name === undefined || age === undefined || sex === undefined
-		|| address === undefined || reason === undefined) {
-		
+    var invalidFields = verificationHandler.verifySurveyForm(data);
+	if (invalidFields.length >= 1) {
 		var err = new Error();
 	  	err.status = 400;
-	  	err.message = "Invalid request!";
-	  	next(err);
-
+	  	if (invalidFields.length == 1) {
+            err.message = "You didn't fill " + invalidFields[0] + " field. Please complete the form!";
+		} else {
+	  		err.message = "You didn't fill these following field: " + invalidFields.join(", ") + ". Please complete the form!";
+		}
+	  	res.status(err.status).send(err);
 	} else {
-		var data = {
-			name : name,
-			age : age,
-			sex : sex,
-			address : address,
-			isInterested : isInterested,
-			reason : reason
-		};
-
 		surveyService.store(data).then(function(result) {
 			res.send();  	
 		}).catch(function(err) {

@@ -1,5 +1,5 @@
 var UtilService = require('../services/utilservice');
-var AgeDAO = require('../services/age_dao');
+var AgeDAO = require('../models/agedao');
 var database = require('../services/database');
 
 var ageDAO = new AgeDAO(database);

@@ -11,15 +11,15 @@ angular.module('surveyController', ['ui.bootstrap'])
 			});
 
 		$scope.storeSurveyData = function() {
-            console.log($scope.formData);
-			if ($scope.formData.name != undefined) {
 				$scope.loading = true;
 				Survey.store($scope.formData)
 					.success(function(data) {
 						$scope.loading = false;
 						$scope.formData = {};
-					});
-			}
+					}).error(function(data, code) {
+					    console.log(data);
+					    console.log(code);
+                });
 		}
 	}]);
 	
