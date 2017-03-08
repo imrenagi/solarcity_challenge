@@ -14,38 +14,33 @@ class SurveyService {
 		var that = this;
 		return this.surveyDAO.getResult().then(function(data) {
 			var result = {};
-			result.groupby_sex = that.aggregateBySex(data);
-			result.total = data.length;
+			result.data = that.aggregateBySex(data);
 			return result;
 		});
 	}
 
 	aggregateBySex(res) {
-		var result = {};
-		result.male = {
-			interested: 0,
-			not_interested:0
-		}
-		result.female = {
-			interested: 0,
-			not_interested:0	
-		}
+		var interested = [0, 0];
+		var notInterested = [0, 0];
+		var total = 0;
 		
 		for(var i = 0; i < res.length; i++) {
-			if (res[i].interested === 1) {
-				if (res[i].sex === 1) {
-					result.male.interested++;
-				} else {
-					result.female.interested++;
-				}
+			if (res[i].sex === 1) {
+				if (res[i].interested === 1) interested[0] = res[i].count;
+				else notInterested[0] = res[i].count;
 			} else {
-				if (res[i].sex === 1) {
-					result.male.not_interested++;
-				} else {
-					result.female.not_interested++;
-				}
+                if (res[i].interested === 1) interested[1] = res[i].count;
+                else notInterested[1] = res[i].count;
 			}
+            total += res[i].count;
 		}
+
+		var result = {
+			interested : interested,
+			not_interested : notInterested,
+			total : total,
+			series: ['Male', 'Female']
+		};
 		return result;
 	}
 

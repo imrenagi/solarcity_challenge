@@ -1,2 +1,2 @@
-angular.module('survey', ['ui.bootstrap', 'surveyController', 'surveyService', 'utilService']);
+angular.module('survey', ['chart.js', 'ui.bootstrap', 'surveyController', 'surveyService', 'utilService']);
 

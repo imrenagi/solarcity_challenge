@@ -10,7 +10,7 @@ INSERT INTO ages (name) values ('Between 20 and 29');
 INSERT INTO ages (name) values ('Between 30 and 34');
 INSERT INTO ages (name) values ('Between 35 and 39');
 INSERT INTO ages (name) values ('Between 40 and 49');
-INSERT INTO ages (name) values ('Under 50');
+INSERT INTO ages (name) values ('Above 50');
 
 CREATE TABLE IF NOT EXISTS survey (
 	id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
