@@ -18,8 +18,6 @@ angular.module('surveyController', ['ui.bootstrap',  'chart.js'])
 						$scope.formData = {};
 						$scope.openResultDialog();
 					}).error(function(data, code) {
-					    console.log(data);
-					    console.log(code);
 					    $scope.openErrorDialog(data.message);
                 });
 		}
