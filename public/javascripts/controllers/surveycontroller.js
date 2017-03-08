@@ -5,14 +5,6 @@ angular.module('surveyController', ['ui.bootstrap',  'chart.js'])
 		$scope.ages = [];
 		$scope.loading = true;
 
-        $scope.labels = ['2006', '2007', ];
-        $scope.series = ['Series A', 'Series B'];
-
-        $scope.data = [
-            [65, 59],
-            [28, 48]
-        ];
-
 		Util.getAgeOptions()
 			.success(function(data) {
                 $scope.ages = data.ages;
