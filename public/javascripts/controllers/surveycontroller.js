@@ -28,8 +28,7 @@ angular.module('surveyController', ['ui.bootstrap',  'chart.js'])
 					}).error(function(data, code) {
 					    console.log(data);
 					    console.log(code);
-                    	$scope.openResultDialog();
-					    // $scope.openErrorDialog(data.message);
+					    $scope.openErrorDialog(data.message);
                 });
 		}
 
@@ -63,9 +62,9 @@ angular.module('surveyController', ['ui.bootstrap',  'chart.js'])
         }})
     .controller('ResultPopupCont', ['$scope', '$modalInstance','Survey', function ($scope, $modalInstance, Survey) {
 
+        $scope.series = ['Interested', 'Not Interested'];
+
     	Survey.getResultBySex().success(function(data) {
-    		console.log("test");
-            console.log(data);
             $scope.sexLabel = data.data.series;
             $scope.sexData = [
                 data.data.interested,
@@ -73,41 +72,14 @@ angular.module('surveyController', ['ui.bootstrap',  'chart.js'])
             ];
         });
 
-        $scope.series = ['Interested', 'Not Interested'];
-
-        $scope.ageLabel = ['Below 20', 'Between 20 and 29', 'Between 30 and 39', 'Between 40 and 49',
-            'Above 50'];
-        $scope.ageData = [
-            [2, 4, 6, 9, 3],
-            [2, 4, 6, 9, 8]
-        ];
+    	Survey.getResultByAge().success(function(data) {
+            $scope.ageLabel = data.data.series;
+            $scope.ageData = [
+                data.data.interested,
+                data.data.not_interested
+            ];
+		})
 
         $scope.close = function () {
             $modalInstance.dismiss('cancel');
         }}]);
-    // .controller('ResultPopupCont',function ($scope, $modalInstance) {
-    //
-    //     $scope.series = ['Interested', 'Not Interested'];
-    //
-    //     $scope.sexLabel = ['Male', 'Female' ];
-    //
-    //
-    //     $scope.sexData = [
-    //         [65, 59],
-    //         [28, 0]
-    //     ];
-    //
-    //     $scope.ageLabel = ['Below 20', 'Between 20 and 29', 'Between 30 and 39', 'Between 40 and 49',
-		// 	'Above 50'];
-    //     $scope.ageData = [
-    //     		[2, 4, 6, 9, 3],
-		// 		[2, 4, 6, 9, 8]
-		// 	];
-    //
-    //     $scope.close = function () {
-    //         $modalInstance.dismiss('cancel');
-    //     }});
-
-//Surver
-// getResultBySex
-	

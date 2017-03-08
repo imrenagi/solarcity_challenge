@@ -37,10 +37,18 @@ exports.addSurvey = function(req, res, next) {
 	}
 }
 
-exports.getResult = function(req, res, next) {
-	surveyService.fetchResult().then(function(result) {
+exports.getResultBySex = function(req, res, next) {
+	surveyService.fetchResultBySex().then(function(result) {
 		res.send(result);
 	}).catch(function(err) {
 		next(err);
 	});
+};
+
+exports.getResultByAge = function(req, res, next) {
+    surveyService.fetchResultByAge().then(function(result) {
+        res.send(result);
+    }).catch(function(err) {
+        next(err);
+    });
 }

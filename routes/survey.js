@@ -8,6 +8,7 @@ router.use(function(req, res, next){
 })
 
 router.post('/', surveyController.addSurvey);
-router.get('/result', surveyController.getResult);
+router.get('/result/sex', surveyController.getResultBySex);
+router.get('/result/age', surveyController.getResultByAge);
 
 module.exports = router;

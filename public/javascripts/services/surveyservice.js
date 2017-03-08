@@ -5,7 +5,10 @@ angular.module('surveyService', [])
 				return $http.post('/survey', surveyData);
 			},
 			getResultBySex : function() {
-				return $http.get('/survey/result');
-			}
+				return $http.get('/survey/result/sex');
+			},
+            getResultByAge : function() {
+                return $http.get('/survey/result/age');
+            }
 		}
 	}]);
