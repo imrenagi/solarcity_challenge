@@ -57,7 +57,7 @@ AngularJS frontend folder structure:
 |   |-- index.html
 ```
 
-### Technology Stacks
+### Technology Stacks & Reasoning
 
 #### Backend
 
