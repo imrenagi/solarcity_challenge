@@ -141,6 +141,9 @@ This project is documented in [here](http://docs.solarcitychallenge.apiary.io/)
 
 ## Other projects
 
+* [Emergency Social Network](https://github.com/imrenagi/Emergency-Social-Network) This is a team project for Foundation Software Engineering course in Carnegie Mellon University. In this team project,
+we won the best testing award for implementing some best practice in unit test and integration test, and the best documentation award because we had good API and architecture documentation. 
+
 * [CHEF](https://github.com/imrenagi/hackucsc2017) Recently, we won hackathon in UC Santa Cruz after we presented Chef, A virtual waiters. In this competition,
 we won 1st prize in Technology Innovation, The best use of AWS, and 3rd prize in The Best Use of Google Cloud Platform.
 
