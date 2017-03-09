@@ -126,7 +126,7 @@ npm start
 
 ## API Docs
 
-This project is documented in [here](GIVE A LINK)
+This project is documented in [here](http://docs.solarcitychallenge.apiary.io/)
 
 
 ## Other projects
