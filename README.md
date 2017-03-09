@@ -141,6 +141,9 @@ This project is documented in [here](http://docs.solarcitychallenge.apiary.io/)
 
 ## Other projects
 
+* [CHEF](https://github.com/imrenagi/hackucsc2017) Recently, we won hackathon in UC Santa Cruz after we presented Chef, A virtual waiters. In this competition,
+we won 1st prize in Technology Innovation, The best use of AWS, and 3rd prize in The Best Use of Google Cloud Platform.
+
 * [Gojek](https://itunes.apple.com/us/app/go-jek/id944875099?mt=8). This is the mobile application that I've ever worked on. I built iOS mobile app and RESTful API for several services. This code is not public so unfortunately I can't share the code with you. 
 
 * [Bridestory Wedding App](https://itunes.apple.com/us/app/bridestory-wedding-app/id1067262519?mt=8). I worked on iOS team for developing this application. This application has been featured in Apple Store Indonesia. The code is not public so unfortunately I can't share the code with you.
