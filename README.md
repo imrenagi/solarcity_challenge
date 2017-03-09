@@ -1,7 +1,7 @@
 Coding Challenge Guidelines
 ---------------------------
 
-## Descrption
+## Description
 
 ### Problem
 
@@ -25,6 +25,36 @@ show the result and how people's interest with solar panel.
 
 For this challenge, I choose **Back-end track**. 
 
+Backend folder structure:
+
+```
+|-- controllers (RESTful API controllers)
+|   |-- agecontroller.js
+|   |-- survercontroller.js
+|-- models (Backend Model. I use Data Access Object pattern)
+|   |-- agendao.js
+|   |-- surveydao.js   
+|-- services (Services layer for interaction between controller and model)
+|   |-- database.js
+|   |-- surveyservice.js
+|   |-- utilservice.js
+|-- test
+|-- migrations
+|   |__ sqls (contains migration scripts)
+```
+
+Frontend folder structure:
+```
+|-- public
+|   |__ javascripts
+|       |__ controllers 
+|       |__ services (API access)
+|       |-- core.js
+|   |__ stylesheets
+|   |__ templates
+|   |-- index.html
+```
+
 ### Technology Stacks
 
 #### Backend
@@ -34,6 +64,8 @@ be deployed. Then I use ES6 to make the code become more object oriented languag
 several techniques such as dependency injection.
 * _MySQL_. I use MySQL because for this application we only need to use structured data which has been defined before.
 * _Mocha, SinonJS and ExpectJS_ as Node.js testing framwork, mocking framework and assertion library for javascript.
+
+#### Choose of Libraries
 
 #### ADD TRADE-OFF
 
@@ -65,9 +97,10 @@ Don't forget to source the environment variable after you add the new variables.
 
 ### Database
 
-I use MySQL 5.7 for developing this challenge. I also use npm module named `db-migrate` to help me doing database migration if we have any schema changes.
+I use MySQL 5.7 for developing this challenge. The good thing about MySQL is it is easy to setup
+and it is suitable for this application. In addition, I also use npm module named `db-migrate` to help me doing database migration if we have any schema changes.
 
-Create database named `solarcity_challenge` by running the following command in mysql console 
+To prepare the database for this application, create database named `solarcity_challenge` by running the following command in mysql console 
 ```
 CREATE DATABASE IF NOT EXISTS solarcity_challenge
 ```
@@ -91,8 +124,6 @@ To run this program, use:
 npm start
 ```
 
-## Reasoning
-
 ## API Docs
 
 This project is documented in [here](GIVE A LINK)
@@ -103,9 +134,6 @@ This project is documented in [here](GIVE A LINK)
 * [Gojek](https://itunes.apple.com/us/app/go-jek/id944875099?mt=8). This is the mobile application that I've ever worked on. I built iOS mobile app and RESTful API for several services. This code is not public so unfortunately I can't share the code with you. 
 
 * [Bridestory Wedding App](https://itunes.apple.com/us/app/bridestory-wedding-app/id1067262519?mt=8). I worked on iOS team for developing this application. This application has been featured in Apple Store Indonesia. The code is not public so unfortunately I can't share the code with you.
-
-
-
 
 * A description of the problem and solution.
 * Commands required to run the application, including any database management required.
