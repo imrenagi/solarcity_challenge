@@ -18,12 +18,14 @@ So, I provided one page website which has form and a button for submitting it.
 I implement several additional features for this application. The features are:
 * Adding gender options (male/female)
 * Adding error dialog if user doesn't fill all the required fields.
-* Adding a popup dialog to show the survey result. The results is consisted of two graph. They are the result based on gender and the age. The purpose of this graph is just to
+* Adding a popup dialog to show the survey result. The results is consisted of two graphs. They are the result based on gender and the age. The purpose of this graph is just to
 show the result and how people's interest with solar panel.
 
 ### Architecture
 
-For this challenge, I choose **Back-end track**. 
+>While all submissions are expected to be a full stack application, let us know whether your solution is more focused on back-end, front-end or full stack development (While most of our engineers work full stack in some capacity, for the purpose of the coding challenge no preference is paid towards any specific track.).
+
+For this challenge, I choose **Back-end track** with Model View Controller (MVC) pattern in both front-end and back-end side. 
 
 Backend folder structure:
 
@@ -43,7 +45,7 @@ Backend folder structure:
 |   |__ sqls (contains migration scripts)
 ```
 
-Frontend folder structure:
+AngularJS frontend folder structure:
 ```
 |-- public
 |   |__ javascripts
@@ -76,6 +78,13 @@ to this challenge. Other than reason, I didn't use React because I want to under
 from JQuery to what they have today.
 * _Bootstrap + Angular.js_ I use these library to help me use bootstrap component in angular js frontend. 
 * _Chart.js + Angular.js_ Because I add feature for showing the survey result, I give a simple visualization using bar chart.  
+
+#### What Next?
+
+>Reasoning behind your technical choices. Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project.
+* If I have more time, I want to use [Sequelize](docs.sequelizejs.com) as the ORM for MySQL. Currently, I'm using native mysql library for node.js.
+The caveat is it is using plain SQL query which is not really type-safe. Sequelize provides developer with nice API to connect to database, so it will become more convenient.
+
 
 ## Commands and Instructions
 
@@ -134,12 +143,6 @@ This project is documented in [here](http://docs.solarcitychallenge.apiary.io/)
 * [Gojek](https://itunes.apple.com/us/app/go-jek/id944875099?mt=8). This is the mobile application that I've ever worked on. I built iOS mobile app and RESTful API for several services. This code is not public so unfortunately I can't share the code with you. 
 
 * [Bridestory Wedding App](https://itunes.apple.com/us/app/bridestory-wedding-app/id1067262519?mt=8). I worked on iOS team for developing this application. This application has been featured in Apple Store Indonesia. The code is not public so unfortunately I can't share the code with you.
-
-* A description of the problem and solution.
-* Commands required to run the application, including any database management required.
-* While all submissions are expected to be a full stack application, let us know whether your solution is more focused on back-end, front-end or full stack development (While most of our engineers work full stack in some capacity, for the purpose of the coding challenge no preference is paid towards any specific track.).
-* Reasoning behind your technical choices. Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project.
-* (Optional) Link to other code you're particularly proud of.
 
 Review Process
 --------------
