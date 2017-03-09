@@ -1,13 +1,111 @@
 Coding Challenge Guidelines
 ---------------------------
 
+## Descrption
+
+### Problem
+
 [Coding Challenge Guidelines](ChallengeInstructions.md)
 
-Readme
-------
+* Your application should accept a customer's name, age, address, and why their interested in Solar (Yes/no questions and/or text.).
+* Your application should save this information to a database of your choosing.
 
-You will need to include a README in your submission. Write your
-README as if it was for a production application. Include the following items:
+### Solution
+
+The simplest solution for this problem is providing a HTML form that accepts several informations required. 
+So, I provided one page website which has form and a button for submitting it.
+
+I implement several additional features for this application. The features are:
+* Adding gender options (male/female)
+* Adding error dialog if user doesn't fill all the required fields.
+* Adding a popup dialog to show the survey result. The results is consisted of two graph. They are the result based on gender and the age. The purpose of this graph is just to
+show the result and how people's interest with solar panel.
+
+### Architecture
+
+For this challenge, I choose **Back-end track**. 
+
+### Technology Stacks
+
+#### Backend
+
+* _Node.js + Express.js + ES6_. I used node.js because to develop a simple application, node.js is easier to be setup and to
+be deployed. Then I use ES6 to make the code become more object oriented language with class absstraction. By using ES6, it's easier for me to use
+several techniques such as dependency injection.
+* _MySQL_. I use MySQL because for this application we only need to use structured data which has been defined before.
+* _Mocha, SinonJS and ExpectJS_ as Node.js testing framwork, mocking framework and assertion library for javascript.
+
+#### ADD TRADE-OFF
+
+#### Frontend
+
+* _Angular.js_. I'm currently learning angular js framework. So, I think it's a good time for me to give a try
+to this challenge. Other than reason, I didn't use React because I want to understand how those new frontend technology changed
+from JQuery to what they have today.
+* _Bootstrap + Angular.js_ I use these library to help me use bootstrap component in angular js frontend. 
+* _Chart.js + Angular.js_ Because I add feature for showing the survey result, I give a simple visualization using bar chart.  
+
+## Commands and Instructions
+
+Preparing node environment
+
+* Install node dependencies by using : `npm install`
+* Install bower dependencies by using : `bower install`
+
+### Environment Variable
+
+Set you environment variable as follows:
+```
+export DB_NAME=solarcity_challenge
+export DB_HOST=localhost
+export DB_USER=change with your mysql username
+export DB_PASSWORD=change with your mysql password
+```
+Don't forget to source the environment variable after you add the new variables.
+
+### Database
+
+I use MySQL 5.7 for developing this challenge. I also use npm module named `db-migrate` to help me doing database migration if we have any schema changes.
+
+Create database named `solarcity_challenge` by running the following command in mysql console 
+```
+CREATE DATABASE IF NOT EXISTS solarcity_challenge
+```
+
+To create the tables, please run the mysql migration script 
+```
+db-migrate up
+```
+
+### Running the test
+
+To run the test, use:
+ ```
+ npm test
+ ```
+
+### Running The program
+
+To run this program, use:
+```
+npm start
+```
+
+## Reasoning
+
+## API Docs
+
+This project is documented in [here](GIVE A LINK)
+
+
+## Other projects
+
+* [Gojek](https://itunes.apple.com/us/app/go-jek/id944875099?mt=8). This is the mobile application that I've ever worked on. I built iOS mobile app and RESTful API for several services. This code is not public so unfortunately I can't share the code with you. 
+
+* [Bridestory Wedding App](https://itunes.apple.com/us/app/bridestory-wedding-app/id1067262519?mt=8). I worked on iOS team for developing this application. This application has been featured in Apple Store Indonesia. The code is not public so unfortunately I can't share the code with you.
+
+
+
 
 * A description of the problem and solution.
 * Commands required to run the application, including any database management required.
