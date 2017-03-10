@@ -79,8 +79,6 @@ for this cas we can assume the data are enough to be handled by SQL database.
 * _PromiseJS_. We can use Promise JS to change the way we use callback in Javascript. If we have cascading request (one after another), it will 
 become more convenient to use Promise JS because it can make the code much cleaner.
 
-### ADD TRADE-OFF
-
 ### Frontend
 
 * _Angular.js_. I'm currently learning angular js framework. So, I think it's a good time for me to give a try
@@ -146,7 +144,6 @@ npm start
 ##API Docs
 
 This project is documented in [here](http://docs.solarcitychallenge.apiary.io/)
-
 
 # Other projects
 
