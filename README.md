@@ -1,5 +1,6 @@
-Coding Challenge Guidelines
----------------------------
+# Solar City Challenge
+
+This application has been deployed to Amazon EC2 instance. Please use this [link](http://ec2-54-163-167-99.compute-1.amazonaws.com:3000/) to go to the site.
 
 # Description
 
@@ -72,7 +73,6 @@ This project RESTful API is documented [here](http://docs.solarcitychallenge.api
 
 * _Node.js + Express.js + ES6_. I used node.js because to develop a simple application, node.js is easier to be setup and to
 be deployed. Then I use ES6 so that it is easier to follow Object Oriented Paradigm (OOP) and to use dependency injection for this project. 
-
 
 * _MySQL_. I use MySQL because for this application we only need to use structured data which has been defined before. The problem is if the number of data 
 is getting bigger, the performance will be slowed down because query for aggregating the data will take more time to be executed. But, 
@@ -169,13 +169,12 @@ we won 1st prize in Technology Innovation, The best use of AWS, and 3rd prize in
 
 * [Bridestory Wedding App](https://itunes.apple.com/us/app/bridestory-wedding-app/id1067262519?mt=8). I worked on iOS team for developing this application. This application has been featured in Apple Store Indonesia. The code is not public so unfortunately I can't share the code with you.
 
-Review Process
---------------
 
-Your application will be reviewed by the software engineering team. The aspects of your code we will judge include:
+# Msc
 
-* Clarity: Does the README clearly explains the problem and solution?
-* Correctness: Does the application do what was asked? If there is anything missing, does the README explain why it is missing?
-* Code quality: is the code simple, easy to understand, and maintainable?
-* UX: is the web interface understandable and pleasing to use?
-* Technical choices: Choices of libraries, databases, architecture etc.
+* I used express project template to generate this project. It created `bin/www` and `app.js`. I just need to add several lines to these files for additional configuration for this app.
+* Length of experiences with several framework:
+    * NodeJS framework : 1 year
+    * Java: 4 years
+    * Java Play Framework : 2 years
+    * Scala Play Framework : 2 years
