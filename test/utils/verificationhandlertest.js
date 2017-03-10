@@ -47,30 +47,5 @@ suite('Verification Handler Test Suite', function() {
         expect(invalidFields).to.eql(handler.verifySurveyForm(data));
     });
 
-    test('Should return several invalid fields resulted from wrong data type', function () {
-        var invalidFields = ["age", "sex"];
-        var data = {
-            name : "something",
-            sex : "1",
-            age : "2",
-            address : "address",
-            isInterested : true,
-            reason : "this is a reason"
-        };
-        expect(invalidFields).to.eql(handler.verifySurveyForm(data));
-    });
-
-    test('Should return a invalid field whose wrong type', function () {
-        var invalidFields = ["sex"];
-        var data = {
-            name : "something",
-            sex : "1",
-            age : 2,
-            address : "address",
-            isInterested : true,
-            reason : "this is a reason"
-        };
-        expect(invalidFields).to.eql(handler.verifySurveyForm(data));
-    });
 
 });
