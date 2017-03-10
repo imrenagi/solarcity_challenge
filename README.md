@@ -31,7 +31,7 @@ json response will be handled by _Controller_. _Controller_ will have one/more s
 to make a call to database. Each data given by database will be processed (if it is needed) in service class. By having this design, each MVC module will have its own responsibilities and will not be bothered if
 something change. 
 
-Moreover, all communication between frontend and backend will only be able through RESTful API. Back-end will not render the html page along with the data it requires. However, backend will just render the page and let front-end access the data via provided RESTful API. By using this mechanism, frontend will become more loosely coupled from the back-end.
+Moreover, all communication between frontend and backend will only be established through RESTful API. Back-end will not render the html page along with the data it requires. However, backend will just render the page and let front-end access the data by accessing the provided RESTful API. By using this mechanism, frontend will become more loosely coupled from the back-end.
 
 Backend folder structure:
 
