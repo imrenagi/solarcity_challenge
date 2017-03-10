@@ -19,7 +19,7 @@ Every time user submit the form, we do some validation and then store all data t
 For addition, I implement several new features to gain more insight about the data and to improve user experience of this application. The features are:
 * Adding gender options (male/female)
 * Adding error dialog if user doesn't fill all the required fields.
-* Adding a popup dialog to show the survey result. The results are consisted of two graphs. They are the survey result groped by gender and the age. The purpose of this graph is just to
+* Adding a popup dialog to show the survey result. The results are consisted of two graphs. They are the survey result grouped by gender and the age. The purpose of this graph is just to
 show the result and how people's interest with solar panel.
 
 ## Architecture
