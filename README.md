@@ -13,12 +13,12 @@ Coding Challenge Guidelines
 ## Solution
 
 The simplest solution for this problem is providing a HTML form that accepts several informations required. 
-So, I provided one page website which has form and a button for submitting it.
+Every time user submit the form, we do some validation and then store all data to MySQL database. The tech stacks will be discussed later.
 
-I implement several additional features for this application. The features are:
+For addition, I implement several new features to gain more insight about the data and to improve user experience of this application. The features are:
 * Adding gender options (male/female)
 * Adding error dialog if user doesn't fill all the required fields.
-* Adding a popup dialog to show the survey result. The results is consisted of two graphs. They are the result based on gender and the age. The purpose of this graph is just to
+* Adding a popup dialog to show the survey result. The results are consisted of two graphs. They are the survey result groped by gender and the age. The purpose of this graph is just to
 show the result and how people's interest with solar panel.
 
 ## Architecture
@@ -30,7 +30,7 @@ json response will be handled by _Controller_. _Controller_ will have one/more s
 to make a call to database. Each data given by database will be processed (if it is needed) in service class. By having this design, each MVC module will have its own responsibilities and will not be bothered if
 something change. 
 
-Then, by using dependency injection, we can also test a specific class by creating mock object for collaborator classes. It makes the code more testable and maintainable.
+Moreover, all communication between frontend and backend will only be able through RESTful API. Back-end will not render the html page along with the data it requires. However, backend will just render the page and let front-end access the data via provided RESTful API. By using this mechanism, frontend will become more loosely coupled from the back-end.
 
 Backend folder structure:
 
@@ -62,17 +62,21 @@ AngularJS frontend folder structure:
 |   |-- index.html
 ```
 
+##API Docs
+
+This project RESTful API is documented [here](http://docs.solarcitychallenge.apiary.io/)
+
 ## Technology Stacks & Reasoning
 
 ### Backend
 
 * _Node.js + Express.js + ES6_. I used node.js because to develop a simple application, node.js is easier to be setup and to
-be deployed. Then I use ES6 to make the code become more object oriented language with its notion of class. 
-In addition, I can also do dependency injection with ES6.
+be deployed. Then I use ES6 so that it is easier to follow Object Oriented Paradigm (OOP) and to use dependency injection for this project. 
+
 
 * _MySQL_. I use MySQL because for this application we only need to use structured data which has been defined before. The problem is if the number of data 
 is getting bigger, the performance will be slowed down because query for aggregating the data will take more time to be executed. But, 
-for this cas we can assume the data are enough to be handled by SQL database.
+for this case I assume that the data are not too huge so MySQL still fits the requirement.
 
 * _Mocha, SinonJS and ExpectJS_ as Node.js testing framwork, mocking framework and assertion library for javascript.
 
@@ -82,12 +86,11 @@ become more convenient to use Promise JS because it can make the code much clean
 ### Frontend
 
 * _Angular.js_. I'm currently learning angular js framework. So, I think it's a good time for me to give a try
-to this challenge. Other than reason, I didn't use React because I want to understand how those new frontend technology changed
-from JQuery to what they have today.
+to this challenge. I didn't use React because I think I need to spend time with angular and get used to with it.
 
-* _Bootstrap + Angular.js_ I use these library to help me use bootstrap component in angular js frontend.
+* _Bootstrap + Angular.js_ I use these libraries to help me using bootstrap component in angular js frontend.
  
-* _Chart.js + Angular.js_ I need this javascript library to visualize the data stored in database.
+* _Chart.js + Angular.js_ I need this javascript library to visualize the data stored in database, to users.
 
 ### What Next?
 
@@ -97,9 +100,22 @@ The caveat is it is using plain SQL query which is not really type-safe. Sequeli
 # Commands and Instructions
 
 Preparing node environment
-
-* Install node dependencies by using : `npm install`
-* Install bower dependencies by using : `bower install`
+* Install these following npm module:
+```
+npm install bower -g
+npm install forever -g
+npm install promise -g
+npm install grunt-cli mocha istanbul -g
+npm install db-migrate -g
+```
+* Install node dependencies by using : 
+```
+npm install
+```
+* Install bower dependencies by using : 
+```
+bower install
+```
 
 ## Environment Variable
 
@@ -140,10 +156,6 @@ To run this program, use:
 ```
 npm start
 ```
-
-##API Docs
-
-This project is documented in [here](http://docs.solarcitychallenge.apiary.io/)
 
 # Other projects
 
