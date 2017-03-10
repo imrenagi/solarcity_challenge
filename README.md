@@ -97,6 +97,10 @@ to this challenge. I didn't use React because I think I need to spend time with 
 * If I have more time, I want to use [Sequelize](docs.sequelizejs.com) as the ORM for MySQL. Currently, I'm using native mysql library for node.js.
 The caveat is it is using plain SQL query which is not really type-safe. Sequelize provides developer with nice API to connect to database, so it will become more convenient.
 
+* I want to do some integration testing by directly hit the API endpoint and provide some edge cases (such as empty data). 
+This testing requires test database and some scripts which will be used to automate the database setup and create some fake data.
+So far, I created unit test to test the logic in data processing and to validate data sent by users.
+
 # Commands and Instructions
 
 Preparing node environment
